@@ -6,18 +6,13 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import MovieCardControls from "./MovieCardControls";
 
-interface movieProps {
-  movie: {
-    id: number;
-    title: string;
-    release_date: string;
-    vote_average: string;
-    overview: string;
-    image: string;
-  };
+import { movieProps } from "../interfaces/interfaces";
+
+interface movieCard {
+  movie: movieProps;
 }
 
-export default function MovieCard({ movie }: movieProps) {
+export default function MovieCard({ movie }: movieCard) {
   return (
     <Grid item xs={6} md={3}>
       <Card sx={{ maxWidth: 345 }}>
