@@ -1,7 +1,14 @@
-import React from 'react'
+import React from "react";
+import Container from "@mui/material/Container";
+
+//components
+import Navbar from "../components/Navbar";
 
 export default function Watchlist() {
   return (
-    <div>Watchlist</div>
-  )
+    <>
+      <Navbar />
+      <Container>hey</Container>
+    </>
+  );
 }
