@@ -1,11 +1,10 @@
 import React from "react";
-import { Grid } from "@mui/material";
+import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import MovieCardControls from "./MovieCardControls";
 
 interface movieProps {
   movie: {
@@ -25,7 +24,7 @@ export default function MovieCard({ movie }: movieProps) {
         <CardMedia
           component="img"
           alt="green iguana"
-          height="140"
+          height="200"
           image={movie.image}
         />
         <CardContent>
@@ -36,10 +35,7 @@ export default function MovieCard({ movie }: movieProps) {
             {movie.overview}
           </Typography>
         </CardContent>
-        <CardActions>
-          <Button size="small">fav</Button>
-          <Button size="small">Add</Button>
-        </CardActions>
+        <MovieCardControls />
       </Card>
     </Grid>
   );
