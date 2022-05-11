@@ -4,5 +4,5 @@ export interface movieProps {
     release_date: string;
     vote_average: string;
     overview: string;
-    image: string;
+    poster_path: string;
 }

@@ -1,4 +1,3 @@
-import React from "react";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -18,9 +17,9 @@ export default function MovieCard({ movie }: movieCard) {
       <Card sx={{ maxWidth: 345 }}>
         <CardMedia
           component="img"
-          alt="green iguana"
+          alt={movie.title}
           height="200"
-          image={movie.image}
+          image={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">

@@ -15,7 +15,9 @@ export default function MovieListSection({ list, title }: listProps) {
         {title}
       </Typography>
       <Grid container spacing={2}>
-        {list?.[0] ? list.map((item) => <MovieCard movie={item} />) : null}
+        {list?.[0]
+          ? list.map((ListItem) => <MovieCard movie={ListItem} key={ListItem.id} />)
+          : null}
       </Grid>
     </section>
   );
