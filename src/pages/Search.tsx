@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+//mui
 import Container from "@mui/material/Container";
+import Button from "@mui/material/Button";
 //components
 import Navbar from "../components/Navbar";
 import MovieListSection from "../components/MovieListSection";
 //interface
 import { movieProps } from "../interfaces/interfaces";
-import { Button, TextField } from "@mui/material";
 //hooks
 import useDebounce from "../hooks/useDebounce";
+import SearchBar from "../components/SearchBar";
 
 export default function Search() {
   const API_KEY = "d0051e764e60b395b912da9a68a2327b"; //should be in a .env
@@ -56,15 +58,8 @@ export default function Search() {
     <>
       <Navbar />
       <Container>
-        <TextField
-          id="outlined-basic"
-          label="Outlined"
-          variant="outlined"
-          onChange={(e) => setValue(e.target.value)}
-        />
-
+        <SearchBar setValue={setValue} />
         <MovieListSection list={searchResult} title="" />
-
         <Button
           disabled={popularPage === 1}
           onClick={() => setPopularPage((prev) => prev - 1)}
