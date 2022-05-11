@@ -1,16 +1,21 @@
 import React, { createContext, useReducer } from "react";
 import { movieProps } from "../interfaces/interfaces";
 
+//interfaces
+interface stateProps {
+  watchlist: movieProps[];
+  favorites: movieProps[];
+}
+
+interface GlobalProviderProps {
+  children: React.ReactNode;
+}
+
 //initial state
 const initialState: stateProps = {
   watchlist: [],
   favorites: [],
 };
-
-interface stateProps {
-  watchlist: movieProps[];
-  favorites: movieProps[];
-}
 
 type AppState = typeof initialState;
 type Action =
@@ -18,10 +23,6 @@ type Action =
   | { type: "ADD_TO_FAVORITES"; payload: movieProps }
   | { type: "REMOVE_FROM_WATCHLIST"; payload: number }
   | { type: "REMOVE_FROM_FAVORITES"; payload: number };
-
-interface GlobalProviderProps {
-  children: React.ReactNode;
-}
 
 //create context
 export const GlobalContext = createContext<{

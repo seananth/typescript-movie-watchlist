@@ -4,14 +4,9 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import MovieCardControls from "./MovieCardControls";
+import { movieCardProps } from "../interfaces/interfaces";
 
-import { movieProps } from "../interfaces/interfaces";
-
-interface movieCard {
-  movie: movieProps;
-}
-
-export default function MovieCard({ movie }: movieCard) {
+export default function MovieCard({ movie }: movieCardProps) {
   return (
     <Grid item xs={6} md={3}>
       <Card sx={{ maxWidth: 345 }}>
