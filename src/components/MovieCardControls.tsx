@@ -1,12 +1,30 @@
-import React from "react";
+import React, { useContext } from "react";
+import { GlobalContext } from "../context/GlobalState";
 import CardActions from "@mui/material/CardActions";
 import Button from "@mui/material/Button";
 
-export default function MovieCardControls() {
+import { movieProps } from "../interfaces/interfaces";
+
+interface movieCard {
+  movie: movieProps;
+}
+
+export default function MovieCardControls({ movie }: movieCard) {
+  const { state, dispatch } = useContext(GlobalContext);
   return (
     <CardActions>
-      <Button size="small">fav</Button>
-      <Button size="small">Add</Button>
+      <Button
+        size="small"
+        onClick={() => dispatch({ type: "ADD_TO_FAVORITES", payload: movie })}
+      >
+        fav
+      </Button>
+      <Button
+        size="small"
+        onClick={() => dispatch({ type: "ADD_TO_WATCHLIST", payload: movie })}
+      >
+        Add
+      </Button>
     </CardActions>
   );
 }

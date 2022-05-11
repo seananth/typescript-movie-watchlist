@@ -29,7 +29,7 @@ export default function MovieCard({ movie }: movieCard) {
             {movie.overview}
           </Typography>
         </CardContent>
-        <MovieCardControls />
+        <MovieCardControls movie={movie} />
       </Card>
     </Grid>
   );
