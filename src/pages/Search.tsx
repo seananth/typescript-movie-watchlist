@@ -60,6 +60,7 @@ export default function Search() {
       <Container>
         <SearchBar setValue={setValue} />
         <MovieListSection list={searchResult} title="" />
+        <MovieListSection list={popular} title="Popular" />
         <Button
           disabled={popularPage === 1}
           onClick={() => setPopularPage((prev) => prev - 1)}
@@ -69,7 +70,6 @@ export default function Search() {
         <Button onClick={() => setPopularPage((prev) => prev + 1)}>
           Next page
         </Button>
-        <MovieListSection list={popular} title="Popular" />
       </Container>
     </>
   );
