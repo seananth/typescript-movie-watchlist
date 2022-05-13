@@ -7,7 +7,7 @@ import Navbar from "../components/Navbar";
 import MovieListSection from "../components/MovieListSection";
 
 export default function Watchlist() {
-  const { state, dispatch } = useContext(GlobalContext);
+  const { state } = useContext(GlobalContext);
   return (
     <>
       <Navbar />

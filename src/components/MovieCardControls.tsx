@@ -1,9 +1,12 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
+import { movieCardProps } from "../interfaces/interfaces";
 import CardActions from "@mui/material/CardActions";
 import Button from "@mui/material/Button";
-
-import { movieCardProps } from "../interfaces/interfaces";
+import HeartBrokenIcon from "@mui/icons-material/HeartBroken";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import AddIcon from "@mui/icons-material/Add";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 export default function MovieCardControls({ movie }: movieCardProps) {
   const { state, dispatch } = useContext(GlobalContext);
@@ -29,14 +32,14 @@ export default function MovieCardControls({ movie }: movieCardProps) {
             dispatch({ type: "REMOVE_FROM_FAVORITES", payload: movie.id })
           }
         >
-          remove favorite
+          <HeartBrokenIcon />
         </Button>
       ) : (
         <Button
           size="small"
           onClick={() => dispatch({ type: "ADD_TO_FAVORITES", payload: movie })}
         >
-          favorite
+          <FavoriteIcon />
         </Button>
       )}
       {watchlistSwitch ? (
@@ -46,14 +49,14 @@ export default function MovieCardControls({ movie }: movieCardProps) {
             dispatch({ type: "REMOVE_FROM_WATCHLIST", payload: movie.id })
           }
         >
-          Remove from Watchlist
+          <DeleteIcon />
         </Button>
       ) : (
         <Button
           size="small"
           onClick={() => dispatch({ type: "ADD_TO_WATCHLIST", payload: movie })}
         >
-          Add to watchlist
+          <AddIcon />
         </Button>
       )}
     </CardActions>
