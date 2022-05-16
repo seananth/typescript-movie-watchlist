@@ -6,7 +6,7 @@ type setValueProps = {
   setValue: React.Dispatch<string>;
 };
 
-export default function SearchBar({ setValue }: setValueProps) {
+const SearchBar = ({ setValue }: setValueProps) => {
   return (
     <Box
       sx={{
@@ -31,3 +31,6 @@ export default function SearchBar({ setValue }: setValueProps) {
     </Box>
   );
 }
+
+
+export default SearchBar;

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 //mui
 import Container from "@mui/material/Container";
-import Button from "@mui/material/Button";
+
 //components
 import Navbar from "../components/Navbar";
 import MovieListSection from "../components/MovieListSection";
@@ -11,8 +11,9 @@ import { movieProps } from "../interfaces/interfaces";
 //hooks
 import useDebounce from "../hooks/useDebounce";
 import SearchBar from "../components/SearchBar";
+import PopularMoviesNav from "../components/PopularMoviesNav";
 
-export default function Search() {
+const Search = () => {
   const API_KEY = "d0051e764e60b395b912da9a68a2327b"; //should be in a .env
   const [popular, setPopular] = useState<movieProps[]>([]);
   const [popularPage, setPopularPage] = useState(1);
@@ -61,16 +62,13 @@ export default function Search() {
         <SearchBar setValue={setValue} />
         <MovieListSection list={searchResult} title="" />
         <MovieListSection list={popular} title="Popular" />
-        <Button
-          disabled={popularPage === 1}
-          onClick={() => setPopularPage((prev) => prev - 1)}
-        >
-          Prev page
-        </Button>
-        <Button onClick={() => setPopularPage((prev) => prev + 1)}>
-          Next page
-        </Button>
+        <PopularMoviesNav
+          popularPage={popularPage}
+          setPopularPage={setPopularPage}
+        />
       </Container>
     </>
   );
-}
+};
+
+export default Search;

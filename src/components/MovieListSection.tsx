@@ -8,7 +8,7 @@ interface listProps {
   list: movieProps[];
 }
 
-export default function MovieListSection({ list, title }: listProps) {
+const MovieListSection = ({ list, title }: listProps) => {
   return (
     <section id={title}>
       <Typography variant="h4" sx={{ fontWeight: "700" }}>
@@ -16,9 +16,13 @@ export default function MovieListSection({ list, title }: listProps) {
       </Typography>
       <Grid container spacing={2}>
         {list?.[0]
-          ? list.map((ListItem) => <MovieCard movie={ListItem} key={ListItem.id} />)
+          ? list.map((ListItem) => (
+              <MovieCard movie={ListItem} key={ListItem.id} />
+            ))
           : null}
       </Grid>
     </section>
   );
-}
+};
+
+export default MovieListSection;

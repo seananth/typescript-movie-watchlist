@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 import MovieCardControls from "./MovieCardControls";
 import { movieCardProps } from "../interfaces/interfaces";
 
-export default function MovieCard({ movie }: movieCardProps) {
+const MovieCard = ({ movie }: movieCardProps) => {
   return (
     <Grid item xs={6} md={3}>
       <Card sx={{ maxWidth: 345 }}>
@@ -28,4 +28,6 @@ export default function MovieCard({ movie }: movieCardProps) {
       </Card>
     </Grid>
   );
-}
+};
+
+export default MovieCard;

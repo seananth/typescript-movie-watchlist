@@ -10,7 +10,7 @@ const linkStyle = {
   color: "White",
 };
 
-export default function Navbar() {
+const Navbar = () => {
   return (
     <Box>
       <AppBar position="sticky">
@@ -29,4 +29,6 @@ export default function Navbar() {
       <Toolbar />
     </Box>
   );
-}
+};
+
+export default Navbar;

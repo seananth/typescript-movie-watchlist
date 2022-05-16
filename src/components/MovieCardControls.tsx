@@ -8,7 +8,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import AddIcon from "@mui/icons-material/Add";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-export default function MovieCardControls({ movie }: movieCardProps) {
+const MovieCardControls = ({ movie }: movieCardProps) => {
   const { state, dispatch } = useContext(GlobalContext);
 
   //check if already on watchlist
@@ -61,4 +61,6 @@ export default function MovieCardControls({ movie }: movieCardProps) {
       )}
     </CardActions>
   );
-}
+};
+
+export default MovieCardControls;

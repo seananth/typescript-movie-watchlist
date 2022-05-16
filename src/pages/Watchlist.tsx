@@ -6,7 +6,7 @@ import Container from "@mui/material/Container";
 import Navbar from "../components/Navbar";
 import MovieListSection from "../components/MovieListSection";
 
-export default function Watchlist() {
+const Watchlist = () => {
   const { state } = useContext(GlobalContext);
   return (
     <>
@@ -18,4 +18,6 @@ export default function Watchlist() {
       </Container>
     </>
   );
-}
+};
+
+export default Watchlist;
