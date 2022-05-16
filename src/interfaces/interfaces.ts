@@ -4,7 +4,7 @@ export interface movieProps {
   release_date: string;
   vote_average: string;
   overview: string;
-  poster_path: string;
+  poster_path?: string;
 }
 
 export interface movieCardProps {

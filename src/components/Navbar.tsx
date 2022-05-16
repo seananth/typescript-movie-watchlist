@@ -5,6 +5,11 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 
+const linkStyle = {
+  textDecoration: "none",
+  color: "White",
+};
+
 export default function Navbar() {
   return (
     <Box>
@@ -13,10 +18,10 @@ export default function Navbar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             News
           </Typography>
-          <Link to="/">
+          <Link to="/" style={linkStyle}>
             <Button color="inherit">Search</Button>
           </Link>
-          <Link to="/watchlist">
+          <Link to="/watchlist" style={linkStyle}>
             <Button color="inherit">Watchlist</Button>
           </Link>
         </Toolbar>
