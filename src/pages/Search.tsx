@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-//mui
-import Container from "@mui/material/Container";
-
 //components
 import Navbar from "../components/Navbar";
 import MovieListSection from "../components/MovieListSection";
+import Container from "@mui/material/Container";
 //interface
 import { movieProps } from "../interfaces/interfaces";
 //hooks

@@ -2,7 +2,7 @@ import React from "react";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 
-interface PopularMoviesNav {
+type PopularMoviesNav = {
   popularPage: number;
   setPopularPage: React.Dispatch<React.SetStateAction<number>>;
 }

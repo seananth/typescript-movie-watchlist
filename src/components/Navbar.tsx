@@ -16,7 +16,7 @@ const Navbar = () => {
       <AppBar position="sticky">
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
+            MovieWatch
           </Typography>
           <Link to="/" style={linkStyle}>
             <Button color="inherit">Search</Button>

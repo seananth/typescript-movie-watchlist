@@ -7,6 +7,6 @@ export interface movieProps {
   poster_path?: string;
 }
 
-export interface movieCardProps {
+export type movieCardProps = {
   movie: movieProps;
-}
+};

@@ -3,7 +3,7 @@ import MovieCard from "./MovieCard";
 import Grid from "@mui/material/Grid";
 import { Typography } from "@mui/material";
 
-interface listProps {
+type listProps = {
   title?: string;
   list: movieProps[];
 }
