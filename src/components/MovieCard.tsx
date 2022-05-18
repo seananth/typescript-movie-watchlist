@@ -5,8 +5,10 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import MovieCardControls from "./MovieCardControls";
 import { movieCardProps } from "../interfaces/interfaces";
+import { Rating } from "@mui/material";
 
 const MovieCard = ({ movie }: movieCardProps) => {
+  let score = Math.round(movie.vote_average * 0.1 * 5);
   return (
     <Grid item xs={6} md={3}>
       <Card sx={{ maxWidth: 345 }}>
@@ -16,10 +18,12 @@ const MovieCard = ({ movie }: movieCardProps) => {
           height="200"
           image={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
         />
+
         <CardContent sx={{ height: 150, overflow: "hidden" }}>
           <Typography gutterBottom variant="h5" component="div">
             {movie.title}
           </Typography>
+          <Rating name="read-only" value={score} readOnly />
           <Typography variant="body2" color="text.secondary">
             {movie.overview}
           </Typography>
