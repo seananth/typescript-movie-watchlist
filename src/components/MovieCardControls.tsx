@@ -27,7 +27,6 @@ const MovieCardControls = ({ movie }: movieCardProps) => {
     <CardActions>
       {favoritesSwitch ? (
         <Button
-          size="small"
           onClick={() =>
             dispatch({ type: "REMOVE_FROM_FAVORITES", payload: movie.id })
           }

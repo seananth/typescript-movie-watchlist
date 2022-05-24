@@ -4,12 +4,13 @@ import axios from "axios";
 import Navbar from "../components/Navbar";
 import MovieListSection from "../components/MovieListSection";
 import Container from "@mui/material/Container";
+import SearchBar from "../components/SearchBar";
+import PopularMoviesNav from "../components/PopularMoviesNav";
 //interface
 import { movieProps } from "../interfaces/interfaces";
 //hooks
 import useDebounce from "../hooks/useDebounce";
-import SearchBar from "../components/SearchBar";
-import PopularMoviesNav from "../components/PopularMoviesNav";
+import useFetch from "../hooks/useFetch";
 
 const Search = () => {
   const API_KEY = "d0051e764e60b395b912da9a68a2327b"; //should be in a .env
@@ -17,26 +18,17 @@ const Search = () => {
   const [popularPage, setPopularPage] = useState(1);
   const [searchResult, setSearchResult] = useState([]);
   const [debouncedValue, value, setValue] = useDebounce<string>("", 200);
+  const { status, data } = useFetch(
+    `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=${popularPage}`
+  );
 
-  //get popular
   useEffect(() => {
-    const apiPopular = async () => {
-      try {
-        await axios
-          .get(
-            `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=${popularPage}`
-          )
-          .then((res) => {
-            setPopular(res.data.results);
-          });
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    apiPopular();
-  }, [popularPage]);
+    if (status === "fetched") {
+      setPopular(data);
+    }
+  }, [data]);
 
-  //search
+  // search
   useEffect(() => {
     if (debouncedValue !== "") {
       try {
