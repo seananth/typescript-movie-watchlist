@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
-const useFetch = (url?: string) => {
+const useFetchPopular = (url?: string) => {
   const [status, setStatus] = useState("idle");
   const [data, setData] = useState([]);
 
@@ -21,4 +21,4 @@ const useFetch = (url?: string) => {
   return { status, data };
 };
 
-export default useFetch;
+export default useFetchPopular;

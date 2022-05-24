@@ -10,7 +10,7 @@ import PopularMoviesNav from "../components/PopularMoviesNav";
 import { movieProps } from "../interfaces/interfaces";
 //hooks
 import useDebounce from "../hooks/useDebounce";
-import useFetch from "../hooks/useFetch";
+import useFetchPopular from "../hooks/useFetchPopular";
 
 const Search = () => {
   const API_KEY = "d0051e764e60b395b912da9a68a2327b"; //should be in a .env
@@ -18,7 +18,7 @@ const Search = () => {
   const [popularPage, setPopularPage] = useState(1);
   const [searchResult, setSearchResult] = useState([]);
   const [debouncedValue, value, setValue] = useDebounce<string>("", 200);
-  const { status, data } = useFetch(
+  const { status, data } = useFetchPopular(
     `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=${popularPage}`
   );
 
