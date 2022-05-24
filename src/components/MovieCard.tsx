@@ -4,10 +4,10 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import MovieCardControls from "./MovieCardControls";
-import { movieCardProps } from "../interfaces/interfaces";
+import { movieProps } from "../interfaces/interfaces";
 import { Rating } from "@mui/material";
 
-const MovieCard = ({ movie }: movieCardProps) => {
+const MovieCard = ({ movie }: { movie: movieProps }) => {
   let score = Math.round(movie.vote_average * 0.1 * 5);
   return (
     <Grid item xs={6} md={3}>

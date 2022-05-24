@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
-import { movieCardProps } from "../interfaces/interfaces";
+import { movieProps } from "../interfaces/interfaces";
 import CardActions from "@mui/material/CardActions";
 import Button from "@mui/material/Button";
 import HeartBrokenIcon from "@mui/icons-material/HeartBroken";
@@ -8,7 +8,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import AddIcon from "@mui/icons-material/Add";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-const MovieCardControls = ({ movie }: movieCardProps) => {
+const MovieCardControls = ({ movie }: { movie: movieProps }) => {
   const { state, dispatch } = useContext(GlobalContext);
 
   //check if already on watchlist
