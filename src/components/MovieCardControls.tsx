@@ -45,6 +45,7 @@ const MovieCardControls = ({ movie }: { movie: movieProps }) => {
       )}
       {watchlistSwitch ? (
         <Button
+          data-testid="remove-watchlist"
           size="small"
           onClick={() =>
             dispatch({ type: "REMOVE_FROM_WATCHLIST", payload: movie.id })
@@ -54,6 +55,7 @@ const MovieCardControls = ({ movie }: { movie: movieProps }) => {
         </Button>
       ) : (
         <Button
+          data-testid="add-watchlist"
           size="small"
           onClick={() => dispatch({ type: "ADD_TO_WATCHLIST", payload: movie })}
         >
