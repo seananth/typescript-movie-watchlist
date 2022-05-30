@@ -27,6 +27,7 @@ const MovieCardControls = ({ movie }: { movie: movieProps }) => {
     <CardActions>
       {favoritesSwitch ? (
         <Button
+          data-testid="remove-favorite"
           onClick={() =>
             dispatch({ type: "REMOVE_FROM_FAVORITES", payload: movie.id })
           }
@@ -35,6 +36,7 @@ const MovieCardControls = ({ movie }: { movie: movieProps }) => {
         </Button>
       ) : (
         <Button
+          data-testid="add-favorite"
           size="small"
           onClick={() => dispatch({ type: "ADD_TO_FAVORITES", payload: movie })}
         >

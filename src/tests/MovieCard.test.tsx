@@ -11,7 +11,7 @@ const mockMovie = {
     "A group of dated appliances embark on a journey to the city to find their master after being abandoned in a cabin in the woods.",
 };
 
-test("renders learn react link", () => {
+test("movie title", () => {
   render(<MovieCard movie={mockMovie} />);
   const elementTitle = screen.getByText("The Brave Little Toaster");
   expect(elementTitle).toBeInTheDocument();
