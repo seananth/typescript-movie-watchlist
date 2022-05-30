@@ -15,7 +15,7 @@ const Search = () => {
   const API_KEY = "d0051e764e60b395b912da9a68a2327b"; //should be in a .env
   const [popular, setPopular] = useState<movieProps[]>([]);
   const [popularPage, setPopularPage] = useState(1);
-  const [searchResult, setSearchResult] = useState([]);
+  const [searchResult, setSearchResult] = useState<movieProps[]>([]);
   const [debouncedValue, value, setValue] = useDebounce<string>("", 200);
   const { status, data } = useApi(
     `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=${popularPage}`
