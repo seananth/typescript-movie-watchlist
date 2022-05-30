@@ -13,18 +13,16 @@ const mockMovie = {
     "A group of dated appliances embark on a journey to the city to find their master after being abandoned in a cabin in the woods.",
 };
 
-test("Button appearence on add to favorites", async () => {
+test("Button appearence change on add to favorites", () => {
   render(
     <GlobalProvider>
       <MovieCard movie={mockMovie} />
     </GlobalProvider>
   );
-
+  //expect add to favoirtes button
   expect(screen.getByTestId("add-favorite")).toBeInTheDocument();
-
+  //click button
   fireEvent.click(screen.getByTestId("add-favorite"));
-
-  await waitFor(() => {
-    expect(screen.getByTestId("remove-favorite")).toBeInTheDocument();
-  });
+  //expect remove from favorites button
+  expect(screen.getByTestId("remove-favorite")).toBeInTheDocument();
 });
